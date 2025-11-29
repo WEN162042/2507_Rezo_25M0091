@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Favicon-->
+    <link rel="icon" href="img/rezo-logo.png" type="image/x-icon" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="css/oz-tailwind.css?version=20251117" />
+    <link rel="stylesheet" href="css/oz-wmy.css?version=20251117" />
+
+    <!-- swiper.js -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- aos.js -->
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <title>日作空間 | Projects Detail</title>
+  </head>
+  <body>
+    <div id="preloader" class="preloader fixed z-50 left-0 top-0 right-0 bottom-0 bg-white flex justify-center items-center">
+      <div class="loader"></div>
+    </div>
+
+    <header x-data="{ showMenu: false }" class="w-full fixed z-50">
+      <div class="z-999 pl-[30px] lg:px-11 relative">
+        <a href="index.html">
+          <img class="fixed w-10 lg:w-11 top-[10px] lg:top-[12px]" src="img/rezo-logo.png" alt="" />
+        </a>
+      </div>
+
+      <!-- Menu button -->
+      <button @click="showMenu = !showMenu" class="cursor-pointer fixed top-0 right-0 z-100 flex flex-col justify-center items-end w-full bg-white lg:bg-white/0 lg:hidden py-3 px-[30px]">
+        <div class="px-1 py-px">
+          <span class="block w-4 h-px bg-black my-2 transition-all duration-500" :class="showMenu ? 'rotate-45 translate-y-[5.2px]' : ''"></span>
+          <span class="block w-4 h-px bg-black my-2 transition-all duration-500" :class="showMenu ? '-rotate-45 -translate-y-1' : ''"></span>
+        </div>
+      </button>
+
+      <nav id="bg-link" class="z-10 px-10 fixed w-full h-screen bg-white text-black opacity-0 flex flex-col transition-opacity duration-700 ease-out lg:relative lg:flex-row lg:justify-end lg:h-auto lg:w-full lg:opacity-100 lg:pointer-events-auto" :class="showMenu ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'">
+        <div id="nav-link" class="font-tinos lg:text-base text-2xl mt-25 flex flex-col items-center justify-center w-full lg:flex-row lg:justify-end lg:mt-0">
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-100 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="projects.html">Projects</a>
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-300 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="about.html">About</a>
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-300 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="concept.html">Concept</a>
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-500 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="service.html">Service</a>
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-700 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="contact.html">Contact</a>
+          <a @click="showMenu = false" class="navBorder my-4 mx-[18px] opacity-0 transition-opacity duration-900 delay-900 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'" href="media.html">Media</a>
+        </div>
+        <div class="flex justify-center md:pl-1">
+          <a href="https://www.facebook.com/rezo.cp/" @click="showMenu = false" class="lg:hover:bg-black/10 py-4 px-2 rounded opacity-0 duration-900 delay-1000 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'">
+            <svg id="fb-link" class="x`w-12 h-12 md:w-5 md:h-5" viewBox="0 0 640 640" fill="currentColor">
+              <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L258.2 544L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/rezowork/" @click="showMenu = false" class="lg:hover:bg-black/10 py-4 px-2 rounded opacity-0 duration-900 delay-1000 lg:opacity-100 lg:duration-0 lg:delay-0" :class="showMenu ? 'opacity-100' : 'opacity-0'">
+            <svg id="ig-link" class="w-12 h-12 md:w-5 md:h-5" viewBox="0 0 640 640" fill="currentColor">
+              <path
+                d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container mx-auto lg:mt-40 mt-30 w-full">
+        <div class="mx-10 lg:mx-30 md:mx-20 tracking-[3px] font-cactus" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500" data-aos-anchor-placement="top-bottom">
+          <h2 class="text-xl font-bold">《靜好。Bask in the sun》</h2>
+          <div class="text-base/8 flex flex-wrap mt-8">
+            <span class="">設計：黃世光、龍定緯｜</span>
+            <span>攝影：光階影像 KPS 李家發｜</span>
+            <span>文字：蔡舒湉</span>
+          </div>
+        </div>
+      </section>
+      <section class="container mx-auto mt-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="900" data-aos-anchor-placement="top-bottom">
+        <div class="lg:mx-30 md:mx-8">
+          <div class="project-swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/project/1741162727.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162727_1.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162727_2.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162727_3.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162727_4.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162727_5.jpg" alt="" /></div>
+              <div class="swiper-slide"><img src="img/project/1741162728_6.jpg" alt="" /></div>
+            </div>
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mx-auto mt-10" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="900" data-aos-anchor-placement="top-bottom">
+        <div class="mx-10 lg:mx-30 md:mx-20 mt-10 lg:mt-20 tracking-[3px] font-cactus">
+          <ul class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+            <li class="bg-gray-100 p-5 rounded flex flex-col justify-center">
+              <p class="flex flex-row justify-center border-b pb-3"><i class="flex items-center pr-2 fi fi-rr-home"></i>• 空間性質</p>
+              <p class="pt-3 text-center">新成屋</p>
+            </li>
+            <li class="bg-gray-100 p-5 rounded flex flex-col justify-center">
+              <p class="flex flex-row justify-center border-b pb-3"><i class="flex items-center pr-2 fi fi-rr-user"></i>• 空間成員</p>
+              <p class="text-center pt-3">大人 2 位</p>
+            </li>
+            <li class="bg-gray-100 p-5 rounded flex flex-col justify-center">
+              <p class="flex flex-row justify-center border-b pb-3"><i class="flex items-center pr-2 fi fi-rr-ruler-combined"></i>• 空間面積</p>
+              <p class="text-center pt-3">13.5坪</p>
+            </li>
+            <li class="bg-gray-100 p-5 rounded flex flex-col justify-center">
+              <p class="flex flex-row justify-center border-b pb-3"><i class="flex items-center pr-2 fi fi-rr-land-layers"></i>• 空間建材</p>
+              <p class="text-center pt-3">水磨石、實木貼皮、榻榻米</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <article class="container mx-auto mb-35" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="900" data-aos-anchor-placement="top-bottom">
+        <div class="mx-10 lg:mx-30 md:mx-20 mt-10 lg:mt-20 tracking-[3px] font-cactus">
+          <div class="flex flex-col gap-8 whitespace-pre-line">
+            <!-- fck-box start -->
+            <div class="fck-box">
+              <h3 class="flex justify-start text-xl font-bold">屋況背景 | Story</h3>
+              <span>基地是13.5坪的小宅，格局方正，原為兩房兩廳。屋主是一對情侶，一位是心靈瑜伽老師，鑽研印度瑜伽、學習藏系佛法，注重在空間中沈浸心靈；另一位從事幕後音樂創作，喜歡閱讀、泡咖啡、音樂創作和欣賞電影，有擺放鋼琴需求。</span>
+              <span>設計需要依據兩位屋主的生活型態，設定出不同的界限感，在空間中保有個人隱私，並滿足追求的日式老屋與歐洲老件風格，營造自然宜人、光線柔軟的環境。</span>
+              <br />
+              <h3 class="flex justify-start text-xl font-bold">設計手法 | Design</h3>
+              <span>為了擴大小宅效益，共拆除三道半隔間牆，餐廳和客廳一道、房間一道，與廚房半道，並以布幕、拉門軟性區隔，讓聯而不合的空間變身大型主臥房。</span>
+              <br />
+              <img src="img/project/2323-info-01(1).jpg" alt="" />
+              <br />
+              <h3 class="flex justify-start text-xl font-bold">工作動線，半開放中島餐廳</h3>
+              <span>在玄關、餐廳到廚房之間建立一條不怕髒的工作動線，地坪在原有的磁磚上覆蓋特殊塗料，質地防水、好清潔。採購回家後，可以直接將生鮮雜物放置在中島平台上，直接帶入廚房整理、收納。</span>
+              <span>廚房隔間牆拆除半道，以開放式廚房形式連結中島餐廳，提升整體空間串連性。</span>
+              <span>屋主喜歡烹飪、煮咖啡，親友來時可以坐在餐桌，與在中島沖咖啡的屋主近距離互動。將水磨石用於中島、書桌和浴室檯面，以繽紛圖樣點綴悠閒時光。</span>
+              <br />
+              <h3 class="flex justify-start text-xl font-bold">老件傢俱成廊道端景，格柵門增添視線趣味</h3>
+              <span>製造賞心悅目的走道端景，將屋主喜歡的老件家具分別放在廊道的兩端，在通往臥房端增設一道實木格柵拉門，除了能促進通透感，也能控制透視度、光線，隱隱約約地感受兩端動態與物景，彈性調配呼吸感。</span>
+              <br />
+              <img src="img/project/2323-info-01(1).jpg" alt="" />
+            </div>
+            <!-- fck-box end -->
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="z-30 flex flex-col md:flex-row justify-center bottom-0 w-full items-center pb-2 bg-white">
+      <p class="font-tinos text-[10px]/3 md:text-[10px] tracking-[2.2px] text-gray-400 w-fit text-center">© 2025 日作空間設計.Site by <a href="https://www.ozchamp.com/">OZCHAMP</a>.</p>
+    </footer>
+
+    <!-- alpinejs -->
+    <script src="js/alpinejs3.12.3.js"></script>
+
+    <!-- jquery.js -->
+    <script src="js/jquery.js"></script>
+
+    <!-- swiper.js -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".project-swiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 25,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
+    </script>
+
+    <!-- aos.js -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true
+      });
+    </script>
+
+    <!-- main -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
